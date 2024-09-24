@@ -20,7 +20,8 @@ const config: Config = {
         sm: 'calc(var(--radius) - 4px)',
       },
       fontFamily: {
-        jaka: [`var(--font-jakarta)`, 'sans-serif'],
+        oran: [`var(--font-oran)`, 'sans-serif'],
+        opensans: [`var(--font-open)`, 'sans-serif'],
       },
     },
   },

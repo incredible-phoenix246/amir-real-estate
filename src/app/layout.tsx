@@ -1,13 +1,13 @@
 import type { Metadata } from 'next'
 import { cn } from '@/utils'
-import { jaka } from '@/fonts'
+import { opensans, oran } from '@/fonts'
 import '../styles/globals.scss'
 import { Providers } from './provider'
 
 export const metadata: Metadata = {
-  title: 'REAVHUB',
+  title: 'AmirRealtors24',
   description:
-    'Choose a name for your  workspace to get you started, you can change it later.',
+    'Discover Luxury, Living in the UAE',
 }
 
 export default function RootLayout({
@@ -19,7 +19,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn('antialiased', jaka.className)}
+      className={cn('antialiased', opensans.className, oran.variable)}
     >
       <body>
         <Providers>

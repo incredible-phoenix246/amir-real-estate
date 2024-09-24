@@ -1,7 +1,21 @@
-import { Plus_Jakarta_Sans } from 'next/font/google'
+import { Oranienbaum, Open_Sans } from 'next/font/google'
 
-export const jaka = Plus_Jakarta_Sans({
-  subsets: ['latin', 'cyrillic-ext', 'latin-ext', 'vietnamese'],
+export const opensans = Open_Sans({
+  subsets: [
+    'latin',
+    'cyrillic-ext',
+    'latin-ext',
+    'vietnamese',
+    'greek',
+    'cyrillic',
+  ],
   display: 'swap',
-  variable: '--font-jakarta',
+  variable: '--font-open',
+})
+
+export const oran = Oranienbaum({
+  subsets: ['latin', 'cyrillic-ext', 'latin-ext', 'cyrillic'],
+  weight: ['400'],
+  display: 'swap',
+  variable: '--font-oran',
 })
