@@ -1,11 +1,18 @@
 import { motion } from 'framer-motion'
 
+interface PaginationProps {
+  currentPage: number
+  totalPages: number
+  onPageChange: (page: number) => void
+  className?: string
+}
+
 export default function Pagination({
   currentPage,
   totalPages,
   onPageChange,
   className = '',
-}) {
+}: PaginationProps) {
   const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1)
 
   return (

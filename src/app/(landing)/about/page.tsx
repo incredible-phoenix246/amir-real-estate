@@ -1,47 +1,9 @@
 import { Play } from 'lucide-react'
 import Image from 'next/image'
-import Link from 'next/link'
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="bg-white shadow-sm">
-        <div className="container mx-auto flex items-center justify-between px-4 py-4">
-          <Link href="/" className="text-2xl font-bold text-orange-500">
-            AmrRealtors24
-          </Link>
-          <nav className="hidden space-x-4 md:flex">
-            <Link href="/" className="text-gray-600 hover:text-orange-500">
-              Home
-            </Link>
-            <Link href="/about" className="text-gray-600 hover:text-orange-500">
-              About us
-            </Link>
-            <Link href="/sale" className="text-gray-600 hover:text-orange-500">
-              For sale
-            </Link>
-            <Link
-              href="/commercial"
-              className="text-gray-600 hover:text-orange-500"
-            >
-              Commercial
-            </Link>
-            <Link href="/rent" className="text-gray-600 hover:text-orange-500">
-              For rent
-            </Link>
-            <Link
-              href="/contact"
-              className="text-gray-600 hover:text-orange-500"
-            >
-              Contact us
-            </Link>
-          </nav>
-          <button className="rounded bg-orange-500 px-4 py-2 text-white">
-            Login
-          </button>
-        </div>
-      </header>
-
       <main className="flex-grow">
         <section className="relative h-[60vh] md:h-[80vh]">
           <Image
