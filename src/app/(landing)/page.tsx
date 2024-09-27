@@ -8,7 +8,7 @@ export default function Home() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setText("I'm ReavDev")
+      setText("I'm AmirRealtors24")
     }, 3000)
 
     return () => clearTimeout(timer)
@@ -18,7 +18,7 @@ export default function Home() {
     <div className="flex h-screen items-center justify-center bg-white">
       <motion.h1
         id="reavdev"
-        className="w-fit overflow-y-clip bg-gradient-to-r from-blue-800 via-pink-500 to-purple-600 bg-clip-text text-[12vw] font-bold text-transparent"
+        className="w-fit overflow-y-clip bg-gradient-to-r from-blue-800 via-pink-500 to-purple-600 bg-clip-text text-center text-[12vw] font-bold text-transparent"
       >
         {text.split('').map((char, index) => (
           <motion.span

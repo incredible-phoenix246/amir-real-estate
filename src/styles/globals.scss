@@ -8,19 +8,31 @@
   }
 }
 
-.linear-overlay {
-  background: linear-gradient(
-    -75deg,
-    #005aba calc(var(--x) + 20%),
-    rgb(255, 255, 255) calc(var(--x) + 25%),
-    #005aba calc(var(--x) + 100%)
-  );
-  mask:
-    linear-gradient(black, black) content-box,
-    linear-gradient(black, black);
-  -webkit-mask:
-    linear-gradient(black, black) content-box,
-    linear-gradient(black, black);
-  mask-composite: exclude;
-  -webkit-mask-composite: xor;
+.max-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 6px;
+}
+
+.hide-scroll::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #001b87;
+  border-radius: 8px;
 }

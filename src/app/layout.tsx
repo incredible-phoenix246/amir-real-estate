@@ -3,11 +3,12 @@ import { cn } from '@/utils'
 import { opensans, oran } from '@/fonts'
 import '../styles/globals.scss'
 import { Providers } from './provider'
+import Footer from './_compnents/Footer'
+import Navbar from './_compnents/Navbar'
 
 export const metadata: Metadata = {
   title: 'AmirRealtors24',
-  description:
-    'Discover Luxury, Living in the UAE',
+  description: 'Discover Luxury, Living in the UAE',
 }
 
 export default function RootLayout({
@@ -23,9 +24,9 @@ export default function RootLayout({
     >
       <body>
         <Providers>
-          <div className="mx-auto min-h-dvh w-full max-w-[1500px]">
-            {children}
-          </div>
+          <Navbar />
+          <div>{children}</div>
+          <Footer />
         </Providers>
       </body>
     </html>
