@@ -23,9 +23,9 @@ export default function RootLayout({
       className={cn('antialiased', opensans.className, oran.variable)}
     >
       <body>
+        <Navbar />
         <Providers>
-          <Navbar />
-          <div>{children}</div>
+          <div className="">{children}</div>
           <Footer />
         </Providers>
       </body>

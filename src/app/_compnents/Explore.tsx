@@ -100,7 +100,7 @@ export default function FeaturedPropertiesSlider() {
       <h1 className="text-navy-900 mb-8 text-3xl font-bold md:text-4xl lg:text-5xl">
         Explore Affordable Homes Across the UAE
       </h1>
-      <div className="relative overflow-hidden">
+      <div className="relative">
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
             key={currentIndex}

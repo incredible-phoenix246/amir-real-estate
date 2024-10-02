@@ -16,6 +16,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import ForSaleSection from '../_compnents/sales'
 import FeaturedPropertiesSlider from '../_compnents/Explore'
 import FeaturedHomesCarousel from '../_compnents/FeaturedSales'
+import ExploreUAEMarket from '../_compnents/ExploreMat'
 
 const fadeInUp: Variants = {
   initial: {
@@ -49,7 +50,7 @@ export default function Home() {
           </div>
         </section>
         <motion.div
-          className="container mx-auto space-y-12 px-4 py-8"
+          className="mx-auto max-w-[1200px] space-y-12 px-4 py-8"
           initial="initial"
           animate="animate"
           variants={{
@@ -63,6 +64,7 @@ export default function Home() {
           <ForSaleSection />
           <FeaturedPropertiesSlider />
           <FeaturedHomesCarousel />
+          <ExploreUAEMarket />
           {/* Hero Section */}
           <motion.section
             className="grid items-center gap-8 md:grid-cols-2"
