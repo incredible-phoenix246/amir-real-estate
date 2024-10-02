@@ -2,7 +2,6 @@
 'use client'
 
 import Image from 'next/image'
-import { Play } from 'lucide-react'
 import { motion, Variants } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import {
@@ -14,6 +13,9 @@ import {
 } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import ForSaleSection from '../_compnents/sales'
+import FeaturedPropertiesSlider from '../_compnents/Explore'
+import FeaturedHomesCarousel from '../_compnents/FeaturedSales'
 
 const fadeInUp: Variants = {
   initial: {
@@ -40,14 +42,10 @@ export default function Home() {
             objectFit="cover"
             className="brightness-50"
           />
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
-            <h1 className="mb-4 text-4xl font-bold md:text-6xl">
-              Your Trusted Real Estate Partner
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white lg:top-1/4">
+            <h1 className="mb-4 max-w-3xl text-4xl font-bold md:text-6xl">
+              Discover Luxury, Living in Dubai
             </h1>
-            <p className="mb-8 text-xl md:text-2xl">in the UAE</p>
-            <button className="flex items-center rounded-full bg-orange-500 px-6 py-3 text-white">
-              <Play className="mr-2" /> Watch Video
-            </button>
           </div>
         </section>
         <motion.div
@@ -62,6 +60,9 @@ export default function Home() {
             },
           }}
         >
+          <ForSaleSection />
+          <FeaturedPropertiesSlider />
+          <FeaturedHomesCarousel />
           {/* Hero Section */}
           <motion.section
             className="grid items-center gap-8 md:grid-cols-2"
