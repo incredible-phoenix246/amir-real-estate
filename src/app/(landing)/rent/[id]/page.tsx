@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import {
   Home,
-  Balcony,
+  //   Balcony,
   BedDouble,
   Ruler,
   Bath,
@@ -14,8 +14,8 @@ import {
   Dumbbell,
   Car,
   Shirt,
-  Tree,
-  Pool,
+  Trees,
+  //   Pool,
 } from 'lucide-react'
 
 export default function PropertyListing() {
@@ -32,7 +32,7 @@ export default function PropertyListing() {
           <div className="grid grid-cols-4 gap-4">
             <div className="col-span-2 row-span-2">
               <Image
-                src="/placeholder.svg"
+                src="/new.png"
                 alt="Living Room"
                 width={600}
                 height={400}
@@ -41,7 +41,7 @@ export default function PropertyListing() {
             </div>
             <div>
               <Image
-                src="/placeholder.svg"
+                src="/new.png"
                 alt="Bedroom"
                 width={280}
                 height={200}
@@ -50,7 +50,7 @@ export default function PropertyListing() {
             </div>
             <div>
               <Image
-                src="/placeholder.svg"
+                src="/new.png"
                 alt="Bathroom"
                 width={280}
                 height={200}
@@ -59,7 +59,7 @@ export default function PropertyListing() {
             </div>
             <div>
               <Image
-                src="/placeholder.svg"
+                src="/new.png"
                 alt="Kitchen"
                 width={280}
                 height={200}
@@ -68,7 +68,7 @@ export default function PropertyListing() {
             </div>
             <div>
               <Image
-                src="/placeholder.svg"
+                src="/new.png"
                 alt="View"
                 width={280}
                 height={200}
@@ -77,7 +77,7 @@ export default function PropertyListing() {
             </div>
             <div className="relative">
               <Image
-                src="/placeholder.svg"
+                src="/new.png"
                 alt="More photos"
                 width={280}
                 height={200}
@@ -94,7 +94,7 @@ export default function PropertyListing() {
               <span>Townhouse</span>
             </div>
             <div className="flex items-center">
-              <Balcony className="mr-2 h-5 w-5" />
+              {/* <Balcony className="mr-2 h-5 w-5" /> */}
               <span>Balcony</span>
             </div>
             <div className="flex items-center">
@@ -157,15 +157,15 @@ export default function PropertyListing() {
                 <span>Maids Room</span>
               </div>
               <div className="flex items-center">
-                <Balcony className="mr-2 h-5 w-5" />
+                {/* <Balcony className="mr-2 h-5 w-5" /> */}
                 <span>Balcony</span>
               </div>
               <div className="flex items-center">
-                <Tree className="mr-2 h-5 w-5" />
+                <Trees className="mr-2 h-5 w-5" />
                 <span>Private Garden</span>
               </div>
               <div className="flex items-center">
-                <Pool className="mr-2 h-5 w-5" />
+                {/* <Pool className="mr-2 h-5 w-5" /> */}
                 <span>Shared Pool</span>
               </div>
               <div className="flex items-center">
@@ -181,7 +181,7 @@ export default function PropertyListing() {
                 <span>Shared Gym</span>
               </div>
               <div className="flex items-center">
-                <Pool className="mr-2 h-5 w-5" />
+                {/* <Pool className="mr-2 h-5 w-5" /> */}
                 <span>Children&apos;s Pool</span>
               </div>
             </div>
@@ -211,7 +211,7 @@ export default function PropertyListing() {
             <CardContent className="p-4">
               <div className="mb-4 flex items-center space-x-4">
                 <Image
-                  src="/placeholder.svg"
+                  src="/new.png"
                   alt="Bertie Hampton"
                   width={64}
                   height={64}
