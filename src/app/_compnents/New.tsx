@@ -70,7 +70,7 @@ export default function UnderMap() {
             agents is here to guide you through every step of the real estate
             process, from finding the right property to securing the best deal.
           </p>
-          <Link href="https://wa.me/2347081203681" target="_blank">
+          <Link href="https://wa.me/2349022795937" target="_blank">
             <Button>Find an Agent Now</Button>
           </Link>
         </div>

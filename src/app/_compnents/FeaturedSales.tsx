@@ -133,7 +133,7 @@ export default function FeaturedHomesCarousel() {
                 handlePrevious()
               }
             }}
-            className="flex gap-6"
+            className="grid grid-cols-1 gap-6 overflow-hidden md:grid-cols-2 lg:grid-cols-3"
           >
             {[...Array(3)].map((_, index) => {
               const propertyIndex = (currentIndex + index) % properties.length

@@ -109,7 +109,7 @@ export default function FeaturedPropertiesSlider() {
             initial={direction > 0 ? 'hiddenRight' : 'hiddenLeft'}
             animate="visible"
             exit="exit"
-            className="flex flex-col gap-6 md:flex-row"
+            className="flex flex-col gap-6 overflow-hidden md:flex-row"
           >
             {[
               properties[currentIndex],

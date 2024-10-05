@@ -121,7 +121,7 @@ export default function PropertyListing() {
           <p className="mb-4 text-gray-600">
             Own this from just 100,071 AED/month
           </p>
-          <Link href="https://wa.me/2347081203681" target="blank">
+          <Link href="https://wa.me/2349022795937" target="blank">
             <Button className="mb-8 w-full">Contact Agent</Button>
           </Link>
 

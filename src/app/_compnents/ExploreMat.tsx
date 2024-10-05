@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api'
+import Link from 'next/link'
 
 const cities = [
   {
@@ -195,7 +196,9 @@ export default function ExploreUAEMarket() {
         UAE property prices by area
       </h2>
       <div className="mb-4 flex gap-4">
-        <Button variant="default">Buy</Button>
+        <Link href="https://wa.me/2349022795937" target="_blank">
+          <Button variant="default">Buy</Button>
+        </Link>
         <Button variant="outline">Rent</Button>
       </div>
 

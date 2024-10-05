@@ -54,7 +54,7 @@ export default function Home() {
           </div>
         </section>
         <motion.div
-          className="mx-auto max-w-[1200px] space-y-12 px-4 py-8"
+          className="mx-auto max-w-[1200px] space-y-12 overflow-hidden px-4 py-8"
           initial="initial"
           animate="animate"
           variants={{
@@ -334,7 +334,7 @@ export default function Home() {
               you through your property journey.
             </motion.p>
             <motion.div variants={fadeInUp}>
-              <Link href="https://wa.me/2347081203681" target="_blank">
+              <Link href="https://wa.me/2349022795937" target="_blank">
                 <Button>Find an agent</Button>
               </Link>
             </motion.div>

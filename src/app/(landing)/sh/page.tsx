@@ -1,336 +1,222 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @next/next/no-img-element */
 'use client'
 
-import { motion, Variants } from 'framer-motion'
+import { useState } from 'react'
 import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+  Bed,
+  Bath,
+  Maximize,
+  Camera,
+  MapPin,
+  MessageCircle,
+  Mail,
+  Phone,
+  Heart,
+  MoreHorizontal,
+} from 'lucide-react'
+import Link from 'next/link'
 
-const fadeInUp: Variants = {
-  initial: {
-    opacity: 0,
-    y: 20,
-    transition: { duration: 0.5 },
-  },
-  animate: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5 },
-  },
+interface Property {
+  id: number
+  type: string
+  price: string
+  description: string
+  bedrooms: number
+  bathrooms: number
+  area: number
+  location: string
+  image: string
+  imageCount: number
+  listedTime: string
 }
 
-export default function AnimatedRealEstateLayout() {
+const PropertyCard = ({ property }: { property: Property }) => {
+  const [isFavorite, setIsFavorite] = useState(false)
+
   return (
-    <motion.div
-      className="container mx-auto space-y-12 px-4 py-8"
-      initial="initial"
-      animate="animate"
-      variants={{
-        animate: {
-          transition: {
-            staggerChildren: 0.1,
-          },
-        },
-      }}
-    >
-      {/* Hero Section */}
-      <motion.section
-        className="grid items-center gap-8 md:grid-cols-2"
-        variants={fadeInUp}
-      >
-        <div>
-          <motion.h1 className="mb-4 text-3xl font-bold" variants={fadeInUp}>
-            Find Your Dream Home with Our Exclusive Listings
-          </motion.h1>
-          <motion.p className="mb-4" variants={fadeInUp}>
-            Discover a wide range of properties tailored to your preferences.
-            Our extensive database includes everything from cozy apartments to
-            luxurious villas.
-          </motion.p>
-          <motion.form className="space-y-4" variants={fadeInUp}>
-            <Input placeholder="Enter location" />
-            <Input placeholder="Property type" />
-            <Input placeholder="Price range" />
-            <Button className="w-full">Search Properties</Button>
-          </motion.form>
+    <Card className="mx-auto mb-4 w-full max-w-2xl">
+      <CardHeader className="relative p-0">
+        <img
+          src={property.image}
+          alt={property.type}
+          className="h-64 w-full rounded-t-lg object-cover"
+        />
+        <div className="absolute left-2 top-2 flex gap-2"></div>
+        <div className="absolute bottom-2 left-2 rounded bg-gray-900 bg-opacity-75 px-2 py-1 text-white">
+          <Camera className="mr-1 inline-block" size={16} />
+          {property.imageCount}
         </div>
-        <motion.div className="grid grid-cols-2 gap-4" variants={fadeInUp}>
-          <motion.img
-            src="/prop2.png?height=200&width=200"
-            alt="Property 1"
-            className="h-auto w-full rounded-lg"
-            variants={fadeInUp}
-          />
-          <motion.img
-            src="/prop2.png?height=200&width=200"
-            alt="Property 2"
-            className="h-auto w-full rounded-lg"
-            variants={fadeInUp}
-          />
-          <motion.img
-            src="/prop2.png?height=200&width=200"
-            alt="Property 3"
-            className="h-auto w-full rounded-lg"
-            variants={fadeInUp}
-          />
-        </motion.div>
-      </motion.section>
-
-      {/* Affordable Homes Section */}
-      <motion.section variants={fadeInUp}>
-        <motion.h2 className="mb-4 text-2xl font-bold" variants={fadeInUp}>
-          Explore Affordable Homes Across the UAE
-        </motion.h2>
-        <div className="grid gap-8 md:grid-cols-2">
-          <motion.div variants={fadeInUp}>
-            <Card>
-              <CardHeader>
-                <CardTitle>Family-Friendly Townhouses in Al Furjan</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <img
-                  src="/prop2.png?height=200&width=400"
-                  alt="Al Furjan Townhouses"
-                  className="mb-4 w-full rounded-lg"
-                />
-                <p>Starting from AED 1,200,000</p>
-              </CardContent>
-              <CardFooter>
-                <Button>View Details</Button>
-              </CardFooter>
-            </Card>
-          </motion.div>
-          <motion.div variants={fadeInUp}>
-            <Card>
-              <CardHeader>
-                <CardTitle>Spacious 1 & 2 BHK Apartments in Sharjah</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <img
-                  src="/prop2.png?height=200&width=400"
-                  alt="Sharjah Apartments"
-                  className="mb-4 w-full rounded-lg"
-                />
-                <p>Starting from AED 450,000</p>
-              </CardContent>
-              <CardFooter>
-                <Button>View Details</Button>
-              </CardFooter>
-            </Card>
-          </motion.div>
-        </div>
-      </motion.section>
-
-      {/* Dubai's Desirable Communities Section */}
-      <motion.section variants={fadeInUp}>
-        <motion.h2 className="mb-4 text-2xl font-bold" variants={fadeInUp}>
-          Affordable Homes in Dubai&apos;s Most Desirable Communities
-        </motion.h2>
-        <div className="grid gap-8 md:grid-cols-3">
-          {[1, 2, 3].map((i) => (
-            <motion.div key={i} variants={fadeInUp}>
-              <Card>
-                <CardContent className="p-0">
-                  <img
-                    src="/prop2.png?height=200&width=300"
-                    alt={`Community ${i}`}
-                    className="w-full rounded-t-lg"
-                  />
-                </CardContent>
-                <CardFooter className="flex items-center justify-between">
-                  <span className="font-bold">1,500,000 AED</span>
-                  <Button variant="outline">Details</Button>
-                </CardFooter>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
-      </motion.section>
-
-      {/* Luxury Properties Section */}
-      <motion.section variants={fadeInUp}>
-        <motion.h2 className="mb-4 text-2xl font-bold" variants={fadeInUp}>
-          Where Luxury and Royalty Converge
-        </motion.h2>
-        <motion.p className="mb-4" variants={fadeInUp}>
-          Discover stunning homes located in Dubai&apos;s most prestigious
-          communities, offering unparalleled luxury and world-class amenities.
-        </motion.p>
-        <div className="grid gap-4 md:grid-cols-3">
-          <motion.img
-            src="/prop2.png?height=200&width=200"
-            alt="Luxury Property 1"
-            className="h-auto w-full rounded-lg"
-            variants={fadeInUp}
-          />
-          <motion.img
-            src="/prop2.png?height=200&width=200"
-            alt="Luxury Property 2"
-            className="h-auto w-full rounded-lg"
-            variants={fadeInUp}
-          />
-          <motion.img
-            src="/prop2.png?height=200&width=200"
-            alt="Luxury Property 3"
-            className="h-auto w-full rounded-lg"
-            variants={fadeInUp}
-          />
-        </div>
-        <motion.div variants={fadeInUp}>
-          <Button className="mt-4">Explore Homes Near the Palace</Button>
-        </motion.div>
-      </motion.section>
-
-      {/* UAE Market Section */}
-      <motion.section variants={fadeInUp}>
-        <motion.h2 className="mb-4 text-2xl font-bold" variants={fadeInUp}>
-          Explore the UAE market
-        </motion.h2>
-        <Tabs defaultValue="dubai">
-          <TabsList>
-            <TabsTrigger value="dubai">Dubai</TabsTrigger>
-            <TabsTrigger value="abudhabi">Abu Dhabi</TabsTrigger>
-            <TabsTrigger value="sharjah">Sharjah</TabsTrigger>
-          </TabsList>
-          <TabsContent value="dubai">
-            <motion.img
-              src="/prop2.png?height=300&width=600"
-              alt="Dubai Skyline"
-              className="mb-4 w-full rounded-lg"
-              variants={fadeInUp}
-            />
-            <motion.p variants={fadeInUp}>
-              Dubai&apos;s real estate market continues to thrive with new
-              developments and increasing property values.
-            </motion.p>
-          </TabsContent>
-          <TabsContent value="abudhabi">
-            <motion.img
-              src="/prop2.png?height=300&width=600"
-              alt="Abu Dhabi Skyline"
-              className="mb-4 w-full rounded-lg"
-              variants={fadeInUp}
-            />
-            <motion.p variants={fadeInUp}>
-              Abu Dhabi offers a stable real estate market with a focus on
-              sustainable urban development.
-            </motion.p>
-          </TabsContent>
-          <TabsContent value="sharjah">
-            <motion.img
-              src="/prop2.png?height=300&width=600"
-              alt="Sharjah Cityscape"
-              className="mb-4 w-full rounded-lg"
-              variants={fadeInUp}
-            />
-            <motion.p variants={fadeInUp}>
-              Sharjah&apos;s property market is growing, with new projects aimed
-              at attracting investors and residents.
-            </motion.p>
-          </TabsContent>
-        </Tabs>
-      </motion.section>
-
-      {/* Company Info Section */}
-      <motion.section
-        className="grid items-center gap-8 md:grid-cols-2"
-        variants={fadeInUp}
-      >
-        <div>
-          <motion.h2 className="mb-4 text-2xl font-bold" variants={fadeInUp}>
-            We&apos;re UAE&apos;s number one property website
-          </motion.h2>
-          <motion.ul
-            className="list-inside list-disc space-y-2"
-            variants={fadeInUp}
+      </CardHeader>
+      <CardContent className="pt-4">
+        <div className="mb-2 flex items-start justify-between">
+          <div>
+            <h3 className="text-lg font-semibold">{property.type}</h3>
+            <p className="text-2xl font-bold">{property.price} AED</p>
+          </div>
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={() => setIsFavorite(!isFavorite)}
           >
-            <li>Largest property portal in the UAE</li>
-            <li>Trusted by millions of users</li>
-            <li>Comprehensive database of properties</li>
-            <li>Expert market insights and advice</li>
-          </motion.ul>
-          <motion.div variants={fadeInUp}>
-            <Button className="mt-4">Read more about us</Button>
-          </motion.div>
+            <Heart className={isFavorite ? 'fill-red-500 text-red-500' : ''} />
+          </Button>
         </div>
-        <div className="grid grid-cols-2 gap-4">
-          <motion.img
-            src="/prop2.png?height=150&width=150"
-            alt="Office"
-            className="h-auto w-full rounded-lg"
-            variants={fadeInUp}
-          />
-          <motion.img
-            src="/prop2.png?height=150&width=150"
-            alt="Team"
-            className="h-auto w-full rounded-lg"
-            variants={fadeInUp}
-          />
+        <p className="mb-4 text-sm text-gray-600">{property.description}</p>
+        <div className="mb-4 flex gap-4">
+          <span className="flex items-center">
+            <Bed className="mr-1" size={16} /> {property.bedrooms}
+          </span>
+          <span className="flex items-center">
+            <Bath className="mr-1" size={16} /> {property.bathrooms}
+          </span>
+          <span className="flex items-center">
+            <Maximize className="mr-1" size={16} /> {property.area} sq
+          </span>
         </div>
-      </motion.section>
+        <div className="flex items-center text-sm text-gray-600">
+          <MapPin size={16} className="mr-1" />
+          {property.location}
+        </div>
+      </CardContent>
+      <CardFooter className="flex flex-col items-center justify-between border-t pt-4 sm:flex-row">
+        <p className="mb-2 text-sm text-gray-600 sm:mb-0">
+          Listed {property.listedTime} Ago
+        </p>
+        <div className="flex gap-2">
+          {/* <Button variant="outline" size="sm">
+            <MessageCircle size={16} /> Chat
+          </Button> */}
+          <Link href="mailto:amirrealto@amirestate.com" target="_blank">
+            <Button variant="outline" size="sm">
+              <Mail size={16} /> Email
+            </Button>
+          </Link>
 
-      {/* Find Agent Section */}
-      <motion.section
-        className="rounded-lg bg-gray-100 p-8"
-        variants={fadeInUp}
-      >
-        <motion.h2 className="mb-4 text-2xl font-bold" variants={fadeInUp}>
-          Find a trusted Estate Agent in your area
-        </motion.h2>
-        <motion.p className="mb-4" variants={fadeInUp}>
-          Connect with experienced real estate professionals who can guide you
-          through your property journey.
-        </motion.p>
-        <motion.div variants={fadeInUp}>
-          <Button>Find an agent</Button>
-        </motion.div>
-      </motion.section>
-
-      {/* Neighborhood Finder Section */}
-      <motion.section variants={fadeInUp}>
-        <motion.h2 className="mb-4 text-2xl font-bold" variants={fadeInUp}>
-          Find Your Perfect Neighborhood
-        </motion.h2>
-        <div className="grid gap-4 md:grid-cols-3">
-          <motion.div className="relative" variants={fadeInUp}>
-            <img
-              src="/prop2.png?height=200&width=200"
-              alt="Downtown Dubai"
-              className="h-auto w-full rounded-lg"
-            />
-            <span className="absolute bottom-2 left-2 rounded bg-white px-2 py-1">
-              Downtown Dubai
-            </span>
-          </motion.div>
-          <motion.div className="relative" variants={fadeInUp}>
-            <img
-              src="/prop2.png?height=200&width=200"
-              alt="Palm Jumeirah"
-              className="h-auto w-full rounded-lg"
-            />
-            <span className="absolute bottom-2 left-2 rounded bg-white px-2 py-1">
-              Palm Jumeirah
-            </span>
-          </motion.div>
-          <motion.div className="relative" variants={fadeInUp}>
-            <img
-              src="/prop2.png?height=200&width=200"
-              alt="Dubai Marina"
-              className="h-auto w-full rounded-lg"
-            />
-            <span className="absolute bottom-2 left-2 rounded bg-white px-2 py-1">
-              Dubai Marina
-            </span>
-          </motion.div>
+          <Link href="https://wa.me/2349022795937" target="_blank">
+            <Button variant="outline" size="sm">
+              <Phone size={16} /> WhatsApp
+            </Button>
+          </Link>
+          <Button variant="outline" size="icon">
+            <MoreHorizontal size={16} />
+          </Button>
         </div>
-      </motion.section>
-    </motion.div>
+      </CardFooter>
+    </Card>
+  )
+}
+
+export default function PropertyListings() {
+  const properties = [
+    {
+      id: 1,
+      type: 'Apartment',
+      price: '2,500,000',
+      description:
+        'This Property Offers 2 Bedrooms Either Side Both Comprising Of En Suites With The Master Bedroom Offering Access To The Balcony. The Property Also Offers A Private Landscaped Garden, Study Room And Downstairs Guest WC.',
+      bedrooms: 2,
+      bathrooms: 2,
+      area: 1099,
+      location:
+        'Villa Residences Creek Beach, Creek Beach, Dubai Creek Harbour (The Lagoons), Dubai',
+      image: 'Link.png',
+      imageCount: 12,
+      listedTime: '2 Hours',
+    },
+    {
+      id: 2,
+      type: 'Villa',
+      price: '5,000,000',
+      description:
+        'Stunning 4-bedroom villa with a spacious layout and luxurious finishes. Located in a serene neighborhood with a private pool and garden.',
+      bedrooms: 4,
+      bathrooms: 4,
+      area: 2500,
+      location: 'Jumeirah Village Circle, Dubai',
+      image: 'prop12.png',
+      imageCount: 10,
+      listedTime: '1 Day',
+    },
+    {
+      id: 3,
+      type: 'Townhouse',
+      price: '3,200,000',
+      description:
+        'Modern 3-bedroom townhouse with an open-plan living area and access to community amenities including a pool and gym.',
+      bedrooms: 3,
+      bathrooms: 3,
+      area: 2000,
+      location: 'Dubai Hills Estate, Dubai',
+      image: 'prop23.png',
+      imageCount: 8,
+      listedTime: '3 Days',
+    },
+    {
+      id: 4,
+      type: 'Penthouse',
+      price: '12,000,000',
+      description:
+        'Luxurious penthouse with panoramic views of the city skyline. Featuring 5 bedrooms, a private terrace, and high-end appliances.',
+      bedrooms: 5,
+      bathrooms: 6,
+      area: 4000,
+      location: 'Downtown Dubai, Dubai',
+      image: 'gea.png',
+      imageCount: 15,
+      listedTime: '5 Days',
+    },
+    {
+      id: 5,
+      type: 'Apartment',
+      price: '1,800,000',
+      description:
+        'Charming 1-bedroom apartment located in a vibrant community, featuring modern finishes and a balcony with a view.',
+      bedrooms: 1,
+      bathrooms: 1,
+      area: 800,
+      location: 'Dubai Marina, Dubai',
+      image: 'aa.png',
+      imageCount: 5,
+      listedTime: '10 Hours',
+    },
+    {
+      id: 6,
+      type: 'Villa',
+      price: '8,500,000',
+      description:
+        'Exquisite 5-bedroom villa with premium finishes, a large garden, and access to exclusive community facilities.',
+      bedrooms: 5,
+      bathrooms: 5,
+      area: 3500,
+      location: 'Arabian Ranches, Dubai',
+      image: 'as.png',
+      imageCount: 7,
+      listedTime: '1 Week',
+    },
+    {
+      id: 7,
+      type: 'Apartment',
+      price: '3,000,000',
+      description:
+        'Stylish 2-bedroom apartment with modern design and luxury amenities in a prime location close to shopping and entertainment.',
+      bedrooms: 2,
+      bathrooms: 2,
+      area: 1200,
+      location: 'Business Bay, Dubai',
+      image: 'ada.png',
+      imageCount: 6,
+      listedTime: '4 Days',
+    },
+  ]
+
+  return (
+    <div className="container mx-auto px-4 py-8">
+      {properties.map((property) => (
+        <PropertyCard key={property.id} property={property} />
+      ))}
+    </div>
   )
 }
