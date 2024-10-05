@@ -9,7 +9,7 @@ const navItems = [
   { name: 'Home', href: '/' },
   { name: 'About us', href: '/about' },
   { name: 'For sale', href: '/sale' },
-  { name: 'Commercial', href: '/commercial' },
+  // { name: 'Commercial', href: '/commercial' },
   { name: 'For rent', href: '/rent' },
   { name: 'Contact us', href: '/contact' },
 ]

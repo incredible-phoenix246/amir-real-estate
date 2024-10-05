@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @next/next/no-img-element */
 'use client'
 
@@ -17,6 +18,7 @@ import ForSaleSection from '../_compnents/sales'
 import FeaturedPropertiesSlider from '../_compnents/Explore'
 import FeaturedHomesCarousel from '../_compnents/FeaturedSales'
 import ExploreUAEMarket from '../_compnents/ExploreMat'
+import Link from 'next/link'
 
 const fadeInUp: Variants = {
   initial: {
@@ -66,7 +68,7 @@ export default function Home() {
           <FeaturedHomesCarousel />
           <ExploreUAEMarket />
           {/* Hero Section */}
-          <motion.section
+          {/* <motion.section
             className="grid items-center gap-8 md:grid-cols-2"
             variants={fadeInUp}
           >
@@ -109,10 +111,10 @@ export default function Home() {
                 variants={fadeInUp}
               />
             </motion.div>
-          </motion.section>
+          </motion.section> */}
 
           {/* Affordable Homes Section */}
-          <motion.section variants={fadeInUp}>
+          {/* <motion.section variants={fadeInUp}>
             <motion.h2 className="mb-4 text-2xl font-bold" variants={fadeInUp}>
               Explore Affordable Homes Across the UAE
             </motion.h2>
@@ -158,10 +160,10 @@ export default function Home() {
                 </Card>
               </motion.div>
             </div>
-          </motion.section>
+          </motion.section> */}
 
           {/* Dubai's Desirable Communities Section */}
-          <motion.section variants={fadeInUp}>
+          {/* <motion.section variants={fadeInUp}>
             <motion.h2 className="mb-4 text-2xl font-bold" variants={fadeInUp}>
               Affordable Homes in Dubai&apos;s Most Desirable Communities
             </motion.h2>
@@ -184,10 +186,10 @@ export default function Home() {
                 </motion.div>
               ))}
             </div>
-          </motion.section>
+          </motion.section> */}
 
           {/* Luxury Properties Section */}
-          <motion.section variants={fadeInUp}>
+          {/* <motion.section variants={fadeInUp}>
             <motion.h2 className="mb-4 text-2xl font-bold" variants={fadeInUp}>
               Where Luxury and Royalty Converge
             </motion.h2>
@@ -219,10 +221,10 @@ export default function Home() {
             <motion.div variants={fadeInUp}>
               <Button className="mt-4">Explore Homes Near the Palace</Button>
             </motion.div>
-          </motion.section>
+          </motion.section> */}
 
           {/* UAE Market Section */}
-          <motion.section variants={fadeInUp}>
+          {/* <motion.section variants={fadeInUp}>
             <motion.h2 className="mb-4 text-2xl font-bold" variants={fadeInUp}>
               Explore the UAE market
             </motion.h2>
@@ -269,7 +271,7 @@ export default function Home() {
                 </motion.p>
               </TabsContent>
             </Tabs>
-          </motion.section>
+          </motion.section> */}
 
           {/* Company Info Section */}
           <motion.section
@@ -293,7 +295,9 @@ export default function Home() {
                 <li>Expert market insights and advice</li>
               </motion.ul>
               <motion.div variants={fadeInUp}>
-                <Button className="mt-4">Read more about us</Button>
+                <Link href="/about">
+                  <Button className="mt-4">Read more about us</Button>
+                </Link>
               </motion.div>
             </div>
             <div className="grid grid-cols-2 gap-4">
@@ -325,7 +329,9 @@ export default function Home() {
               you through your property journey.
             </motion.p>
             <motion.div variants={fadeInUp}>
-              <Button>Find an agent</Button>
+              <Link href="https://wa.me/2347081203681" target="blank">
+                <Button>Find an agent</Button>
+              </Link>
             </motion.div>
           </motion.section>
 

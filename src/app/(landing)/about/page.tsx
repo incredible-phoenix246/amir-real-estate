@@ -1,4 +1,4 @@
-import { Play } from 'lucide-react'
+// import { Play } from 'lucide-react'
 import Image from 'next/image'
 
 export default function Home() {
@@ -18,9 +18,9 @@ export default function Home() {
               Your Trusted Real Estate Partner
             </h1>
             <p className="mb-8 text-xl md:text-2xl">in the UAE</p>
-            <button className="flex items-center rounded-full bg-orange-500 px-6 py-3 text-white">
+            {/* <button className="flex items-center rounded-full bg-orange-500 px-6 py-3 text-white">
               <Play className="mr-2" /> Watch Video
-            </button>
+            </button> */}
           </div>
         </section>
 

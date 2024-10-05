@@ -23,7 +23,7 @@ const properties = Array(20)
 
 export default function PropertiesPage() {
   const [currentPage, setCurrentPage] = useState(1)
-  const propertiesPerPage = 6
+  const propertiesPerPage = 20
   const indexOfLastProperty = currentPage * propertiesPerPage
   const indexOfFirstProperty = indexOfLastProperty - propertiesPerPage
   const currentProperties = properties.slice(
@@ -61,8 +61,46 @@ export default function PropertiesPage() {
             ))}
           </motion.div>
         </AnimatePresence>
-        {currentPage === 2 && <AdBanner className="my-8" />}
-        {currentPage === 3 && <NewsSection className="my-8" />}
+        <AdBanner className="my-8" />
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentPage}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5 }}
+            className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
+          >
+            {currentProperties.map((property, index) => (
+              <PropertyCard
+                key={property.id}
+                property={property}
+                index={index}
+              />
+            ))}
+          </motion.div>
+        </AnimatePresence>
+        <NewsSection className="my-8" />
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentPage}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5 }}
+            className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
+          >
+            {currentProperties.map((property, index) => (
+              <PropertyCard
+                key={property.id}
+                property={property}
+                index={index}
+              />
+            ))}
+          </motion.div>
+        </AnimatePresence>
+        {/* {currentPage === 2 && <AdBanner className="my-8" />}
+        {currentPage === 3 && <NewsSection className="my-8" />} */}
         <Pagination
           currentPage={currentPage}
           totalPages={Math.ceil(properties.length / propertiesPerPage)}
