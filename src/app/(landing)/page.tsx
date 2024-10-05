@@ -19,6 +19,8 @@ import FeaturedPropertiesSlider from '../_compnents/Explore'
 import FeaturedHomesCarousel from '../_compnents/FeaturedSales'
 import ExploreUAEMarket from '../_compnents/ExploreMat'
 import Link from 'next/link'
+import UnderMap from '../_compnents/New'
+import UnderHouse from '../_compnents/Lux'
 
 const fadeInUp: Variants = {
   initial: {
@@ -67,6 +69,9 @@ export default function Home() {
           <FeaturedPropertiesSlider />
           <FeaturedHomesCarousel />
           <ExploreUAEMarket />
+
+          <UnderMap />
+
           {/* Hero Section */}
           {/* <motion.section
             className="grid items-center gap-8 md:grid-cols-2"
@@ -329,11 +334,13 @@ export default function Home() {
               you through your property journey.
             </motion.p>
             <motion.div variants={fadeInUp}>
-              <Link href="https://wa.me/2347081203681" target="blank">
+              <Link href="https://wa.me/2347081203681" target="_blank">
                 <Button>Find an agent</Button>
               </Link>
             </motion.div>
           </motion.section>
+
+          <UnderHouse />
 
           {/* Neighborhood Finder Section */}
           <motion.section variants={fadeInUp}>

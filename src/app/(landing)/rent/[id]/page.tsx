@@ -17,6 +17,7 @@ import {
   Trees,
   //   Pool,
 } from 'lucide-react'
+import Link from 'next/link'
 
 export default function PropertyListing() {
   return (
@@ -120,7 +121,9 @@ export default function PropertyListing() {
           <p className="mb-4 text-gray-600">
             Own this from just 100,071 AED/month
           </p>
-          <Button className="mb-8 w-full">Contact Agent</Button>
+          <Link href="https://wa.me/2347081203681" target="blank">
+            <Button className="mb-8 w-full">Contact Agent</Button>
+          </Link>
 
           <h3 className="mb-4 text-xl font-semibold">Property details</h3>
           <div className="space-y-4 text-gray-600">
