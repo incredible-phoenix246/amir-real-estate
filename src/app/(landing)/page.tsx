@@ -67,7 +67,7 @@ export default function Home() {
         >
           <ForSaleSection />
           <FeaturedPropertiesSlider />
-          <FeaturedHomesCarousel />
+          {/* <FeaturedHomesCarousel /> */}
           <ExploreUAEMarket />
 
           <UnderMap />

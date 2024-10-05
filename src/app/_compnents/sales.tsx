@@ -24,13 +24,13 @@ export default function ForSaleSection() {
           <Image
             src={sales1}
             alt="Modern apartment buildings"
-            className="h-full w-full xl:h-[376px] xl:w-[480px]"
+            className="h-full w-full xl:h-[425px] xl:w-[454px]"
           />
 
           <Image
             src={sales2}
             alt="illustration"
-            className="absolute right-[200px] hidden h-[376px] w-[480px] xl:top-[230px] xl:block 2xl:top-[200px]"
+            className="absolute right-[200px] hidden h-[454px] w-[425px] xl:top-[230px] xl:block 2xl:top-[200px]"
           />
         </div>
 

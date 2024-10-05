@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 
 const properties = [
   {
@@ -136,7 +137,9 @@ export default function FeaturedPropertiesSlider() {
                     <span className="font-bold">
                       Starting from {property.price}
                     </span>
-                    <Button variant="default">View property</Button>
+                    <Link href={'/rent/2'}>
+                      <Button variant="default">View property</Button>
+                    </Link>
                   </div>
                 </div>
               </div>
